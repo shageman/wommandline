@@ -26,39 +26,39 @@ class RedirectsTest < Test::Unit::TestCase
 
 
   def test_redirect_to_google
-    '/?g+TEST'.should_redirect_to "https://www.google.com/search?q=TEST"
+    '/?q=g+TEST'.should_redirect_to "https://www.google.com/search?personal=0&q=TEST"
   end
 
   def test_redirect_to_google_recent_pages
-    '/?gr+TEST'.should_redirect_to "https://www.google.com/search?tbs=qdr%3Am&q=TEST"
+    '/?q=gr+TEST'.should_redirect_to "https://www.google.com/search?personal=0&tbs=qdr%3Am&q=TEST"
   end
 
   def test_redirect_to_google_image_search
-    '/?gim+TEST'.should_redirect_to "http://www.google.de/search?tbm=isch&q=TEST"
+    '/?q=gim+TEST'.should_redirect_to "http://www.google.de/search?personal=0&tbm=isch&q=TEST"
   end
 
   def test_redirect_to_amazon
-    '/?amz+TEST'.should_redirect_to "http://www.amazon.com/s?ie=UTF8&keywords=TEST"
+    '/?q=am+TEST'.should_redirect_to "http://www.amazon.com/s?ie=UTF8&keywords=TEST"
   end
 
   def test_redirect_to_english_wikipedia
-    '/?wp+TEST'.should_redirect_to "http://en.wikipedia.org/wiki/TEST"
+    '/?q=wp+TEST'.should_redirect_to "http://en.wikipedia.org/wiki/TEST"
   end
 
   def test_redirect_to_german_wikipedia
-    '/?wpg+TEST'.should_redirect_to "http://de.wikipedia.org/wiki/TEST"
+    '/?q=wpg+TEST'.should_redirect_to "http://de.wikipedia.org/wiki/TEST"
   end
 
   def test_redirect_to_google_maps
-    '/?gm+TEST'.should_redirect_to "http://maps.google.com/maps?q=TEST"
+    '/?q=gm+TEST'.should_redirect_to "http://maps.google.com/maps?q=TEST"
   end
 
   def test_redirect_to_rubygems
-    '/?rg+TEST'.should_redirect_to "http://rubygems.org/search?utf8=%E2%9C%93&query=TEST"
+    '/?q=rg+TEST'.should_redirect_to "http://rubygems.org/search?utf8=%E2%9C%93&query=TEST"
   end
 
   def test_redirect_to_scroogle
-    '/?scr+TEST'.should_redirect_to "http://www.scroogle.org/cgi-bin/nbbw.cgi?Gw=TEST"
+    '/?q=scr+TEST'.should_redirect_to "http://www.scroogle.org/cgi-bin/nbbw.cgi?Gw=TEST"
   end
 
 end

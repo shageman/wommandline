@@ -1,0 +1,19 @@
+%html
+  %head
+    %title
+      wommandline
+  %body
+    %h1
+      Search
+
+    %form{ method: "get" }
+      %input{ type: "text", name: "q" }
+      %input{ type: "submit", value: "Pass it on" }
+
+
+    %dl
+      - search_engine_map.each do |engine, options|
+        %dt
+          = engine
+        %dd
+          = options[:description]
