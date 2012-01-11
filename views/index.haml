@@ -2,20 +2,45 @@
   %head
     %title
       wommandline
+    %style{ type: "text/css" }
+      /* Reset CSS */
+      html, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+      article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+      body { line-height: 1; }
+      ol, ul { list-style: none; }
+      blockquote, q { quotes: none; }
+      blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+      table { border-collapse: collapse; border-spacing: 0; }
+      /* New CSS */
+      \#content { width:800px !important; margin:0 auto; text-align:center; padding:15px; }
+      \.description { width: 710px; margin: 0 auto; text-align: center; }
+      body { margin:50px 0; padding:0px; }
+      \.row { display:block; margin:0 auto; text-align: center; margin:15px; }
+      dl { float: left; width: 710px; margin: 0 0; padding: 0; border-bottom: 1px solid #999; }
+      dt { clear: left; float: left; width: 180px; margin: 0; padding: 10px 5px; border-top: 1px solid #999; font-weight: bold; }
+      dd { float: left; width: 500px; margin: 0; padding: 10px 5px; border-top: 1px solid #999; text-align: left; }
+      form { margin-top: 40px; }
+      input { font-size: 150%; border: 1px solid #006; padding: 10px; }
+      p { clear: both; padding-top: 60px !important; width: margin: 0 auto; text-align: center; padding: }
+      \* { font-family: Courier New, monospace !important; }
+
+
   %body
-    %h1
-      Search
-
-    %form{ method: "get" }
-      %input{ type: "text", name: "q" }
-      %input{ type: "submit", value: "Pass it on" }
-
-
-    %dl
-      - SearchEngineQuery::MAPPING.each do |engine, options|
-        %dt
-          = engine
-        %dd
-          = options[:description]
-
-Copyright &copy; 2011 / Three Green Wedges LLC / All Rights Reserved
+    #content
+      .form
+        %form{ method: "get" }
+          .row
+            %input{ type: "text", name: "q", size: '40' }
+          .row
+            %input{ type: "submit", value: "Pass it on" }
+      %p
+        Search like this:
+      .description
+        %dl
+          - SearchEngineQuery::MAPPING.each do |engine, options|
+            %dt
+              = engine
+            %dd
+              = options[:description]
+      %p
+        Copyright &copy; 2011 / Three Green Wedges LLC / All Rights Reserved
