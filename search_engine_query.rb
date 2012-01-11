@@ -25,9 +25,7 @@ class SearchEngineQuery
   end
 
   def url
-    if command
-      @url ||= MAPPING[command][:url].gsub "QUERY", query
-    end
+    @url ||= MAPPING[command][:url].gsub "QUERY", query if command
   end
 
   def command
@@ -42,7 +40,7 @@ class SearchEngineQuery
     return nil unless @parameters
     p = @parameters.dup.split
     p.shift if command && command != default_command || p.first.to_sym == default_command
-      @query = CGI::escape(p.join(" "))
+    @query = CGI::escape(p.join(" "))
   end
 
   def default_command
