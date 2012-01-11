@@ -29,6 +29,12 @@ class SearchEngineQueryTest < Test::Unit::TestCase
     assert_equal :g, SearchEngineQuery.new('q' => 'g QUERY').command
   end
 
+  def test_command_is_nil_if_query_string_is_blank
+    assert_equal nil, SearchEngineQuery.new('q' => "").command
+  end
+
+
+
 
   def test_default_command
     assert_equal :scr, SearchEngineQuery.new(nil).default_command
@@ -47,9 +53,14 @@ class SearchEngineQueryTest < Test::Unit::TestCase
     assert_equal "something_unknown+term1+term2", SearchEngineQuery.new('q' => 'something_unknown term1 term2').query
   end
 
-  def test_query_is_empty_string_there_is_only_search_engine_command
+  def test_query_is_empty_string_if_there_is_only_search_engine_command
     assert_equal "", SearchEngineQuery.new('q' => "#{SearchEngineQuery.new.default_command}").query
   end
+
+  def test_query_is_nil_if_query_string_is_blank
+    assert_equal nil, SearchEngineQuery.new('q' => "").query
+  end
+
 
 
   def test_query_is_nil_if_parameters_nil

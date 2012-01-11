@@ -30,14 +30,14 @@ class SearchEngineQuery
 
   def command
     return @command if @command
-    return nil unless @parameters
+    return nil if !@parameters || @parameters == ''
     potential_command = @parameters.split.first.to_sym
     @command = MAPPING[potential_command].nil? ? default_command : potential_command
   end
 
   def query
     return @query if @query
-    return nil unless @parameters
+    return nil if !@parameters || @parameters == ''
     p = @parameters.dup.split
     p.shift if command && command != default_command || p.first.to_sym == default_command
     @query = CGI::escape(p.join(" "))
