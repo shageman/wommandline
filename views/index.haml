@@ -12,8 +12,10 @@
 
 
     %dl
-      - search_engine_map.each do |engine, options|
+      - SearchEngineQuery::MAPPING.each do |engine, options|
         %dt
           = engine
         %dd
           = options[:description]
+
+Copyright &copy; 2011 / Three Green Wedges LLC / All Rights Reserved
