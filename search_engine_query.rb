@@ -11,13 +11,14 @@ class SearchEngineQuery
     gm: { url: "http://maps.google.com/maps?q=QUERY", description: "Google Maps" },
     gr: { url: "https://www.google.com/search?personal=0&tbs=qdr:m&q=QUERY", description: "Depersonalized, recent Google" },
     leo: { url: "http://dict.leo.org/ende?search=QUERY", description: "Leo German-English Dictionary" },
-    rg: { url: "http://rubygems.org/search?utf8=%E2%9C%93&query=QUERY", description: "Rubygems" },
     r: { url: "http://apidock.com/ruby/search?query=QUERY", description: "Ruby APIdock" },
     ra: { url: "http://railsapi.com/doc/rails-v3.0.8rc1_ruby-v1.9.2/", description: "Rails API - how to search?" },
+    rg: { url: "http://rubygems.org/search?utf8=%E2%9C%93&query=QUERY", description: "Rubygems" },
     rr: { url: "http://api.rubyonrails.org/?q=QUERY", description: "Rails API" },
     scr: { url: "http://www.scroogle.org/cgi-bin/nbbw.cgi?Gw=QUERY", description: "Scroogle" },
     wp: { url: "http://en.wikipedia.org/wiki/QUERY", description: "English Wikipedia" },
     wpg: { url:"http://de.wikipedia.org/wiki/QUERY" , description: "German Wikipedia" },
+    yt: { url: "http://www.youtube.com/results?search_query=QUERY", description: "YouTube" }
   }
 
   def initialize(params = nil)
