@@ -6,12 +6,6 @@ require 'rack/test'
 
 ENV['RACK_ENV'] = 'test'
 
-class String
-
-  def should_redirect_to(url)
-  end
-end
-
 class RedirectsTest < Test::Unit::TestCase
   include Rack::Test::Methods
   def app
