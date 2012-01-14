@@ -7,6 +7,7 @@ class SearchEngineQuery
   MAPPING = {
     am: { url: "http://www.amazon.com/s?ie=UTF8&keywords=QUERY", description: "Amazon" },
     g: { url: "https://www.google.com/search?personal=0&q=QUERY", description: "Depersonalized Google" },
+    gh: { url: "https://github.com/search?q=QUERY&type=Everything", description: "Github" },
     gim: { url: "http://www.google.de/search?personal=0&tbm=isch&q=QUERY", description: "Depersonalized Google image" },
     gm: { url: "http://maps.google.com/maps?q=QUERY", description: "Google Maps" },
     gr: { url: "https://www.google.com/search?personal=0&tbs=qdr:m&q=QUERY", description: "Depersonalized, recent Google" },
