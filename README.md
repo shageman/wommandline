@@ -1,4 +1,4 @@
-# Wommandline [![Build Status](https://secure.travis-ci.org/shageman/wommandline.png)](https://secure.travis-ci.org/shageman/wommandline)[![Dependency Status](https://gemnasium.com/shageman/wommandline.png)](https://gemnasium.com/shageman/wommandline)
+# Wommandline [![Build Status](https://secure.travis-ci.org/shageman/wommandline.png)](https://secure.travis-ci.org/shageman/wommandline) [![Dependency Status](https://gemnasium.com/shageman/wommandline.png)](https://gemnasium.com/shageman/wommandline)
 Wommandline is your commandline for the Web. And it is simple. As simple as I could make it. Currently, it initiates searches on various websites I regularly use.
 
 I have long used [YubNub](http://yubnub.org) for searching specific websites directly, but found that some commands that I like don't have the right shortcode and well, I had two free hours on my hand.
